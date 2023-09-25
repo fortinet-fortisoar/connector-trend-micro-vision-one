@@ -1,0 +1,1667 @@
+{
+  "type": "workflow_collections",
+  "data": [
+    {
+      "@type": "WorkflowCollection",
+      "name": "Sample - Trend Micro Vision One - 1.0.0",
+      "description": "Sample playbooks for \"Trend Micro Vision One\" connector. If you are planning to use any of the sample playbooks in your environment, ensure that you clone those playbooks and move them to a different collection, since the sample playbook collection gets deleted during connector upgrade and delete.",
+      "visible": true,
+      "image": "data:png;base64,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",
+      "uuid": "13a06ca7-b2f1-489d-80a6-b8b43c3212e3",
+      "id": 49,
+      "deletedAt": null,
+      "importedBy": [],
+      "recordTags": [
+        "Trendmicro",
+        "trendmicro-vision-one"
+      ],
+      "workflows": [
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Add to Block List",
+          "aliasName": null,
+          "tag": "#Trend Micro Vision One",
+          "description": "Adds an email address, file SHA-1, domain, IP address, or URL to the Suspicious Object List, which blocks the objects on subsequent detections. Note: Every object in the request body must refer to only one item.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1656414018,
+          "collection": "/api/3/workflow_collections/13a06ca7-b2f1-489d-80a6-b8b43c3212e3",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/0c3964b2-5945-4f9c-bad2-5bff1f6ecb72",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "580b6852-9e40-4e52-bf2b-c577dcd88789",
+                "title": "Trend Micro Vision One: Add to Block List",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "20",
+              "left": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "0c3964b2-5945-4f9c-bad2-5bff1f6ecb72"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Add to Block List",
+              "description": null,
+              "arguments": {
+                "name": "Trend Micro Vision One",
+                "config": "41632b93-7160-40d9-9335-6de04607a89a",
+                "params": {
+                  "description": "Block Indicator",
+                  "indicator_type": "IP Address",
+                  "indicator_value": "1.1.1.1"
+                },
+                "version": "1.0.0",
+                "connector": "trend-micro-vision-one",
+                "operation": "add_to_block_list",
+                "operationTitle": "Add to Block List",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "88",
+              "left": "349",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "41ab2a6f-101b-4fd8-8d46-96d03edb5f97"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Add to Block List",
+              "targetStep": "/api/3/workflow_steps/41ab2a6f-101b-4fd8-8d46-96d03edb5f97",
+              "sourceStep": "/api/3/workflow_steps/0c3964b2-5945-4f9c-bad2-5bff1f6ecb72",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "03fc6b6c-882a-45da-97b9-9d5d568d572c"
+            }
+          ],
+          "groups": [],
+          "priority": null,
+          "uuid": "02a5ff58-b40b-4d39-bbd4-9c82fbec69ed",
+          "id": 558,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "Trendmicro",
+            "trendmicro-vision-one"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Search Alerts",
+          "aliasName": null,
+          "tag": "#Trend Micro Vision One",
+          "description": "Displays information about workbench alerts that match the specified criteria in a paginated list. Note: This method shows up to 10 entries per page. If the response body exceeds 50 MB in size, only one entry per page is shown.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1656678800,
+          "collection": "/api/3/workflow_collections/13a06ca7-b2f1-489d-80a6-b8b43c3212e3",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/a1dc5a83-d6d3-4721-a440-7c933709951c",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "02b1e4f2-d49c-465f-8ec8-a7c4d455de75",
+                "title": "Trend Micro Vision One: Search Alerts",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "20",
+              "left": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "a1dc5a83-d6d3-4721-a440-7c933709951c"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Search Alerts",
+              "description": null,
+              "arguments": {
+                "name": "Trend Micro Vision One",
+                "config": "41632b93-7160-40d9-9335-6de04607a89a",
+                "params": {
+                  "query": "investigationStatus eq 'New'",
+                  "offset": "",
+                  "orderBy": "",
+                  "endDateTime": "2022-06-29T18:30:00.000Z",
+                  "startDateTime": "2022-06-06T11:34:59.753Z",
+                  "dateTimeTarget": "createdDateTime"
+                },
+                "version": "1.0.0",
+                "connector": "trend-micro-vision-one",
+                "operation": "get_list_alerts",
+                "operationTitle": "Get Alert Lists",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "100",
+              "left": "380",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "ad6c2dcf-644e-4af7-9101-73f11d528f08"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Get Alert Lists",
+              "targetStep": "/api/3/workflow_steps/ad6c2dcf-644e-4af7-9101-73f11d528f08",
+              "sourceStep": "/api/3/workflow_steps/a1dc5a83-d6d3-4721-a440-7c933709951c",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "417d7487-20eb-40fe-9bed-80f7a89d9add"
+            }
+          ],
+          "groups": [],
+          "priority": null,
+          "uuid": "0b2de0cf-cd49-4189-afe4-95e89acbf7f5",
+          "id": 559,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "Trendmicro",
+            "trendmicro-vision-one"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get Detection Data",
+          "aliasName": null,
+          "tag": "#Trend Micro Vision One",
+          "description": "Displays search results from the Detection Data source.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1656422993,
+          "collection": "/api/3/workflow_collections/13a06ca7-b2f1-489d-80a6-b8b43c3212e3",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/dd0bd2cf-fabe-40d8-974f-3c1890f125d7",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "1a7963ae-78d6-42a2-b51d-8b65b762907e",
+                "title": "Trend Micro Vision One: Get Detection Data",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "20",
+              "left": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "dd0bd2cf-fabe-40d8-974f-3c1890f125d7"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Detection Data",
+              "description": null,
+              "arguments": {
+                "name": "Trend Micro Vision One",
+                "config": "41632b93-7160-40d9-9335-6de04607a89a",
+                "params": {
+                  "top": "",
+                  "query": "spt:443 or attachmentFileName:test.txt",
+                  "select": "",
+                  "endDateTime": "2022-06-27T18:30:00.000Z",
+                  "startDateTime": "2022-05-31T18:30:00.000Z"
+                },
+                "version": "1.0.0",
+                "connector": "trend-micro-vision-one",
+                "operation": "get_detection_data",
+                "operationTitle": "Get Detection Data",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "106",
+              "left": "387",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "945a23f7-a786-442b-b2e9-f725799724b3"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Get Detection Data",
+              "targetStep": "/api/3/workflow_steps/945a23f7-a786-442b-b2e9-f725799724b3",
+              "sourceStep": "/api/3/workflow_steps/dd0bd2cf-fabe-40d8-974f-3c1890f125d7",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "93360f9f-37bb-4b2f-9572-7ebb8874fdd0"
+            }
+          ],
+          "groups": [],
+          "priority": null,
+          "uuid": "2403d71f-495c-4473-ad8b-19db218dbe46",
+          "id": 560,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "Trendmicro",
+            "trendmicro-vision-one"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Add to Exception List",
+          "aliasName": null,
+          "tag": "#Trend Micro Vision One",
+          "description": "Adds domains, file SHA-1, file SHA-256, IP addresses, sender addresses, or URLs to the Exception List.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1656413776,
+          "collection": "/api/3/workflow_collections/13a06ca7-b2f1-489d-80a6-b8b43c3212e3",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/902428d7-1854-484e-bdf6-c43eb0a703b5",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "96323256-5db3-4966-a326-348b9fdf5d65",
+                "title": "Trend Micro Vision One: Add to Exception List",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "20",
+              "left": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "902428d7-1854-484e-bdf6-c43eb0a703b5"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Add to Exception List",
+              "description": null,
+              "arguments": {
+                "name": "Trend Micro Vision One",
+                "config": "41632b93-7160-40d9-9335-6de04607a89a",
+                "params": {
+                  "description": "",
+                  "indicator_type": "IP Address",
+                  "indicator_value": "1.1.1.1"
+                },
+                "version": "1.0.0",
+                "connector": "trend-micro-vision-one",
+                "operation": "add_to_exception_list",
+                "operationTitle": "Add to Exception List",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "118",
+              "left": "333",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "b9af3113-bf4d-41d6-b7dd-ba1e9462c582"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Add to Exception List",
+              "targetStep": "/api/3/workflow_steps/b9af3113-bf4d-41d6-b7dd-ba1e9462c582",
+              "sourceStep": "/api/3/workflow_steps/902428d7-1854-484e-bdf6-c43eb0a703b5",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "d95d7ae0-e9e6-44aa-8fb4-816dd1f9302f"
+            }
+          ],
+          "groups": [],
+          "priority": null,
+          "uuid": "25be566c-cbd4-4b13-8e66-833157f7708f",
+          "id": 561,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "Trendmicro",
+            "trendmicro-vision-one"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Remove from Suspicious Object List",
+          "aliasName": null,
+          "tag": "#Trend Micro Vision One",
+          "description": "Deletes information about domains, file SHA-1, file SHA-256, IP addresses, sender addresses, or URLs from the Suspicious Object List.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1656413716,
+          "collection": "/api/3/workflow_collections/13a06ca7-b2f1-489d-80a6-b8b43c3212e3",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/b0e00be1-8e68-4219-87b3-3d3c5f47e00f",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "c7b4ae66-066f-4273-801b-a02ad7f06ff7",
+                "title": "Trend Micro Vision One: Remove from Suspicious Object List",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "20",
+              "left": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "b0e00be1-8e68-4219-87b3-3d3c5f47e00f"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Remove from Suspicious Object List",
+              "description": null,
+              "arguments": {
+                "name": "Trend Micro Vision One",
+                "config": "41632b93-7160-40d9-9335-6de04607a89a",
+                "params": {
+                  "indicator_type": "IP Address",
+                  "indicator_value": "1.1.1.1"
+                },
+                "version": "1.0.0",
+                "connector": "trend-micro-vision-one",
+                "operation": "remove_from_suspicious_object_list",
+                "operationTitle": "Remove from Suspicious Object List",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "122",
+              "left": "344",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "e055acd2-1c8f-45c8-a001-a7aa8fae3b25"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Remove from Suspicious Object List",
+              "targetStep": "/api/3/workflow_steps/e055acd2-1c8f-45c8-a001-a7aa8fae3b25",
+              "sourceStep": "/api/3/workflow_steps/b0e00be1-8e68-4219-87b3-3d3c5f47e00f",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "f5a2d9ae-0d15-4ebf-bf53-f7f144e917ec"
+            }
+          ],
+          "groups": [],
+          "priority": null,
+          "uuid": "49509270-4899-4c32-a818-5ae5b6661fd9",
+          "id": 562,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "Trendmicro",
+            "trendmicro-vision-one"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Add to Suspicious Object List",
+          "aliasName": null,
+          "tag": "#Trend Micro Vision One",
+          "description": "Adds information about domains, file SHA-1, file SHA-256, IP addresses, email addresses, or URLs to the Suspicious Object List.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1656413670,
+          "collection": "/api/3/workflow_collections/13a06ca7-b2f1-489d-80a6-b8b43c3212e3",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/ace98374-ec03-4b66-ab20-1d4993b61bfd",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "e0bba9c0-c334-4660-911f-2803b69d19b8",
+                "title": "Trend Micro Vision One: Add to Suspicious Object List",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "20",
+              "left": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "ace98374-ec03-4b66-ab20-1d4993b61bfd"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Add to Suspicious Object List",
+              "description": null,
+              "arguments": {
+                "name": "Trend Micro Vision One",
+                "config": "41632b93-7160-40d9-9335-6de04607a89a",
+                "params": {
+                  "riskLevel": "",
+                  "scanAction": "",
+                  "description": "",
+                  "indicator_type": "IP Address",
+                  "indicator_value": "1.1.1.1",
+                  "daysToExpiration": ""
+                },
+                "version": "1.0.0",
+                "connector": "trend-micro-vision-one",
+                "operation": "add_to_suspicious_object_list",
+                "operationTitle": "Add to Suspicious Object List",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "94",
+              "left": "352",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "93954f1f-ff08-483d-ac9a-88749a57bb84"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Add to Suspicious Object List",
+              "targetStep": "/api/3/workflow_steps/93954f1f-ff08-483d-ac9a-88749a57bb84",
+              "sourceStep": "/api/3/workflow_steps/ace98374-ec03-4b66-ab20-1d4993b61bfd",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "826a4075-ac09-4cf2-bdef-281968c31c5f"
+            }
+          ],
+          "groups": [],
+          "priority": null,
+          "uuid": "4acb91fb-aa91-477f-8b92-87882b979a67",
+          "id": 563,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "Trendmicro",
+            "trendmicro-vision-one"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get Endpoint Details",
+          "aliasName": null,
+          "tag": null,
+          "description": "Get Endpoint Details",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1656412504,
+          "collection": "/api/3/workflow_collections/13a06ca7-b2f1-489d-80a6-b8b43c3212e3",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/a238c609-bedf-4046-9a67-57a291aa50e5",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "3ba25aad-6dc5-43ff-8868-d4566ddd061f",
+                "title": "Trend Micro Vision One: Get Endpoint Details",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "40",
+              "left": "40",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "a238c609-bedf-4046-9a67-57a291aa50e5"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Endpoint Details",
+              "description": null,
+              "arguments": {
+                "name": "Trend Micro Vision One",
+                "config": "41632b93-7160-40d9-9335-6de04607a89a",
+                "params": {
+                  "top": "",
+                  "query": "endpointName eq 'sample-host'"
+                },
+                "version": "1.0.0",
+                "connector": "trend-micro-vision-one",
+                "operation": "get_endpoint_details",
+                "operationTitle": "Get Endpoint Details",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "162",
+              "left": "380",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "70fd7919-f895-473c-ae1f-6af2a7fd501d"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Get Endpoint Details",
+              "targetStep": "/api/3/workflow_steps/70fd7919-f895-473c-ae1f-6af2a7fd501d",
+              "sourceStep": "/api/3/workflow_steps/a238c609-bedf-4046-9a67-57a291aa50e5",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "cbcf912a-eb15-42d9-86ab-bc302b199b7f"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "5e92e124-4a53-4903-bd4b-3568edbc461d",
+          "id": 564,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "Trendmicro",
+            "trendmicro-vision-one"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Restore endpoint",
+          "aliasName": null,
+          "tag": "#Trend Micro Vision One",
+          "description": "Restores network connectivity to one or more endpoints that applied the \"Isolate endpoint\" action Note: You can specify either the computer name (\"endpointName\") or the GUID of the installed agent program (\"agentGuid\").",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1656413550,
+          "collection": "/api/3/workflow_collections/13a06ca7-b2f1-489d-80a6-b8b43c3212e3",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/7476afa6-5725-436b-bf21-ac74f89480b8",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "ffaca3c8-8eb7-4dc6-b7ee-c6fa1e206cd1",
+                "title": "Trend Micro Vision One: Restore endpoint",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "20",
+              "left": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "7476afa6-5725-436b-bf21-ac74f89480b8"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Restore Endpoint",
+              "description": null,
+              "arguments": {
+                "name": "Trend Micro Vision One",
+                "config": "41632b93-7160-40d9-9335-6de04607a89a",
+                "params": {
+                  "restore_by": "Computer Names",
+                  "description": "Restore Connection",
+                  "endpointName": "Endpoint1"
+                },
+                "version": "1.0.0",
+                "connector": "trend-micro-vision-one",
+                "operation": "restore_endpoint",
+                "operationTitle": "Restore endpoints",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "121",
+              "left": "362",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "bb0faa68-1bd0-403b-81d9-49b2793ca3b4"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Restore Endpoint",
+              "targetStep": "/api/3/workflow_steps/bb0faa68-1bd0-403b-81d9-49b2793ca3b4",
+              "sourceStep": "/api/3/workflow_steps/7476afa6-5725-436b-bf21-ac74f89480b8",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "0a6964df-0bca-4059-be72-2b994257a361"
+            }
+          ],
+          "groups": [],
+          "priority": null,
+          "uuid": "7aae0a79-ec43-4909-acc9-40f4ab5869a9",
+          "id": 565,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "Trendmicro",
+            "trendmicro-vision-one"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get Alert Details",
+          "aliasName": null,
+          "tag": "#Trend Micro Vision One",
+          "description": "Displays information about the specified alert",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1656413253,
+          "collection": "/api/3/workflow_collections/13a06ca7-b2f1-489d-80a6-b8b43c3212e3",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/8fd8f199-58c8-4616-b914-2a3965239a03",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "889b134a-1d0b-4b61-a3e1-3a77a10f674d",
+                "title": "Trend Micro Vision One: Get Alert Details",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "20",
+              "left": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "8fd8f199-58c8-4616-b914-2a3965239a03"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Alert Details",
+              "description": null,
+              "arguments": {
+                "name": "Trend Micro Vision One",
+                "config": "41632b93-7160-40d9-9335-6de04607a89a",
+                "params": {
+                  "id": "wb-2343-32434-3434-3434"
+                },
+                "version": "1.0.0",
+                "connector": "trend-micro-vision-one",
+                "operation": "get_alert_details",
+                "operationTitle": "Get Alert Details",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "122",
+              "left": "353",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "e43a827d-9709-4918-bc28-401b628518b2"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Get Alert Details",
+              "targetStep": "/api/3/workflow_steps/e43a827d-9709-4918-bc28-401b628518b2",
+              "sourceStep": "/api/3/workflow_steps/8fd8f199-58c8-4616-b914-2a3965239a03",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "22a965bb-0ab9-4824-a155-650fbd146775"
+            }
+          ],
+          "groups": [],
+          "priority": null,
+          "uuid": "8f63ea68-43fa-46ce-9afe-a156a4c318e1",
+          "id": 566,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "Trendmicro",
+            "trendmicro-vision-one"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Quarantine Email Message",
+          "aliasName": null,
+          "tag": "#Trend Micro Vision One",
+          "description": "Moves a message from one or more mailboxes to their corresponding quarantine folders.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1656413200,
+          "collection": "/api/3/workflow_collections/13a06ca7-b2f1-489d-80a6-b8b43c3212e3",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/dbbe1b8d-f471-4773-b488-c4f824d5fb95",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "0d8196b8-6eb5-46e0-aa93-2555536fcb47",
+                "title": "Trend Micro Vision One: Quarantine Email Message",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "20",
+              "left": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "dbbe1b8d-f471-4773-b488-c4f824d5fb95"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Quarantine Email Message",
+              "description": null,
+              "arguments": {
+                "name": "Trend Micro Vision One",
+                "config": "41632b93-7160-40d9-9335-6de04607a89a",
+                "params": {
+                  "uniqueId": "wer4r4r4r4refr4r5t5tg5",
+                  "description": "Test Email",
+                  "quarantine_by": "Message UniqueId"
+                },
+                "version": "1.0.0",
+                "connector": "trend-micro-vision-one",
+                "operation": "quarantine_email_message",
+                "operationTitle": "Quarantine Email Message",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "121",
+              "left": "346",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "c3b411c0-bf4d-4dd1-bc25-f88f50c5b3f6"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Quarantine Email Message",
+              "targetStep": "/api/3/workflow_steps/c3b411c0-bf4d-4dd1-bc25-f88f50c5b3f6",
+              "sourceStep": "/api/3/workflow_steps/dbbe1b8d-f471-4773-b488-c4f824d5fb95",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "985551c5-3e96-4d04-9af3-6e2c33110eb2"
+            }
+          ],
+          "groups": [],
+          "priority": null,
+          "uuid": "977317ce-d6ec-43ec-9941-a155618d8dd5",
+          "id": 567,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "Trendmicro",
+            "trendmicro-vision-one"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Terminates Process",
+          "aliasName": null,
+          "tag": "#Trend Micro Vision One",
+          "description": "Terminates a process that is running on one or more endpoints Note: You can specify either the computer name (\"endpointName\") or the GUID of the installed agent program (\"agentGuid\").",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1656413140,
+          "collection": "/api/3/workflow_collections/13a06ca7-b2f1-489d-80a6-b8b43c3212e3",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/a6f23377-4c18-45a9-a8ff-16dd00553cbf",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "259ae382-f23a-4a87-83f1-e72063bb5966",
+                "title": "Trend Micro Vision One: Terminates Process",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "20",
+              "left": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "a6f23377-4c18-45a9-a8ff-16dd00553cbf"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Terminates Process",
+              "description": null,
+              "arguments": {
+                "name": "Trend Micro Vision One",
+                "config": "41632b93-7160-40d9-9335-6de04607a89a",
+                "params": {
+                  "fileName": "test.exe",
+                  "fileSha1": "cf23df2207d99a74fbe169e3eba035e633b65d94",
+                  "description": "Terminate Process from connector",
+                  "endpointName": "Endpoint1",
+                  "terminates_by": "Computer Names"
+                },
+                "version": "1.0.0",
+                "connector": "trend-micro-vision-one",
+                "operation": "terminates_process",
+                "operationTitle": "Terminates Process",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "156",
+              "left": "401",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "4a52b409-551e-47bd-9ccb-905a6d159f51"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Terminates Process",
+              "targetStep": "/api/3/workflow_steps/4a52b409-551e-47bd-9ccb-905a6d159f51",
+              "sourceStep": "/api/3/workflow_steps/a6f23377-4c18-45a9-a8ff-16dd00553cbf",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "0d60e952-bbab-4457-9b6a-c42872463d46"
+            }
+          ],
+          "groups": [],
+          "priority": null,
+          "uuid": "ae3872df-fced-44ec-842d-d0bde58f0b5f",
+          "id": 568,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "Trendmicro",
+            "trendmicro-vision-one"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Isolate Endpoints",
+          "aliasName": null,
+          "tag": "#Trend Micro Vision One",
+          "description": "Disconnects one or more endpoints from the network (but allows communication with the managing Trend Micro server product) Note: You can specify either the computer name (\"endpointName\") or the GUID of the installed agent program (\"agentGuid\").",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1656413034,
+          "collection": "/api/3/workflow_collections/13a06ca7-b2f1-489d-80a6-b8b43c3212e3",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/9d32e725-eb1d-4f99-9539-61ddbf8f450d",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "f0aa48da-98c2-4ff3-8f9f-cf7d9e187287",
+                "title": "Trend Micro Vision One: Isolate Endpoints",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "20",
+              "left": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "9d32e725-eb1d-4f99-9539-61ddbf8f450d"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Isolate Endpoints",
+              "description": null,
+              "arguments": {
+                "name": "Trend Micro Vision One",
+                "config": "41632b93-7160-40d9-9335-6de04607a89a",
+                "params": {
+                  "isolate_by": "Computer Names",
+                  "description": "Isolate Endpoints",
+                  "endpointName": "Endpoint1,Endpoint2"
+                },
+                "version": "1.0.0",
+                "connector": "trend-micro-vision-one",
+                "operation": "isolate_endpoint",
+                "operationTitle": "Isolate Endpoints",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "151",
+              "left": "341",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "889ea80f-d4be-45a4-a109-403beb1db76a"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Isolate Endpoints",
+              "targetStep": "/api/3/workflow_steps/889ea80f-d4be-45a4-a109-403beb1db76a",
+              "sourceStep": "/api/3/workflow_steps/9d32e725-eb1d-4f99-9539-61ddbf8f450d",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "f16778fe-d87d-4de6-a72a-820bbcfc4ab3"
+            }
+          ],
+          "groups": [],
+          "priority": null,
+          "uuid": "c31ee471-8f9b-49c5-8cf7-3bc1e9f35cb2",
+          "id": 569,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "Trendmicro",
+            "trendmicro-vision-one"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Remove from Exception List",
+          "aliasName": null,
+          "tag": "#Trend Micro Vision One",
+          "description": "Deletes the specified objects from the Exception List.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1656412980,
+          "collection": "/api/3/workflow_collections/13a06ca7-b2f1-489d-80a6-b8b43c3212e3",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/395f5112-2a60-440a-9615-362845c0302c",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "eb97609b-d6e1-41af-a376-f88673044b9a",
+                "title": "Trend Micro Vision One: Remove from Exception List",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "20",
+              "left": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "395f5112-2a60-440a-9615-362845c0302c"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Remove from Exception List",
+              "description": null,
+              "arguments": {
+                "name": "Trend Micro Vision One",
+                "config": "41632b93-7160-40d9-9335-6de04607a89a",
+                "params": {
+                  "description": "Remove from Exception list",
+                  "indicator_type": "IP Address",
+                  "indicator_value": "1.1.1.1"
+                },
+                "version": "1.0.0",
+                "connector": "trend-micro-vision-one",
+                "operation": "add_to_exception_list",
+                "operationTitle": "Add to Exception List",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "140",
+              "left": "360",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "1b9f2365-7531-4ded-84d8-33ca5ea3b488"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Remove from Exception List",
+              "targetStep": "/api/3/workflow_steps/1b9f2365-7531-4ded-84d8-33ca5ea3b488",
+              "sourceStep": "/api/3/workflow_steps/395f5112-2a60-440a-9615-362845c0302c",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "2179f11e-d4ed-436a-87ff-edd7ad544fea"
+            }
+          ],
+          "groups": [],
+          "priority": null,
+          "uuid": "ca49253e-151b-4a87-9592-3bcd365c496b",
+          "id": 570,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "Trendmicro",
+            "trendmicro-vision-one"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Delete Email Message",
+          "aliasName": null,
+          "tag": "#Trend Micro Vision One",
+          "description": "Deletes a message from one or more mailboxes.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1656412845,
+          "collection": "/api/3/workflow_collections/13a06ca7-b2f1-489d-80a6-b8b43c3212e3",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/047a4b0f-3f74-47dc-a0a9-75939026c2a0",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "e880fe01-02e8-4264-936c-e427c8cf551e",
+                "title": "Trend Micro Vision One: Delete Email Message",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "20",
+              "left": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "047a4b0f-3f74-47dc-a0a9-75939026c2a0"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Delete Email Message",
+              "description": null,
+              "arguments": {
+                "name": "Trend Micro Vision One",
+                "config": "41632b93-7160-40d9-9335-6de04607a89a",
+                "params": {
+                  "mailBox": "user@domain.com",
+                  "delete_by": "Message ID",
+                  "messageId": "efrfrfgtrgtrefdffr",
+                  "description": ""
+                },
+                "version": "1.0.0",
+                "connector": "trend-micro-vision-one",
+                "operation": "delete_email_message",
+                "operationTitle": "Delete Email Message",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "84",
+              "left": "396",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "810fdca9-4795-4a46-872e-dcac229b607b"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Delete Email Message",
+              "targetStep": "/api/3/workflow_steps/810fdca9-4795-4a46-872e-dcac229b607b",
+              "sourceStep": "/api/3/workflow_steps/047a4b0f-3f74-47dc-a0a9-75939026c2a0",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "e285006e-0204-42f6-a52e-d78bfe0a6402"
+            }
+          ],
+          "groups": [],
+          "priority": null,
+          "uuid": "dc11d88b-3c65-4bae-8966-49bb2bd73096",
+          "id": 571,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "Trendmicro",
+            "trendmicro-vision-one"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Collect File",
+          "aliasName": null,
+          "tag": "#Trend Micro Vision One",
+          "description": "Collects a file from one or more endpoints and then sends the files to Trend Micro Vision One in a password-protected archive Note: You can specify either the computer name (\"endpointName\") or the GUID of the installed agent program (\"agentGuid\").",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1656412752,
+          "collection": "/api/3/workflow_collections/13a06ca7-b2f1-489d-80a6-b8b43c3212e3",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/44d6e63f-5cb4-4964-8c3e-a02d3c0f51e1",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "9c62210a-e736-4b05-8c9e-40d3496ff423",
+                "title": "Trend Micro Vision One: Collect File",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "20",
+              "left": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "44d6e63f-5cb4-4964-8c3e-a02d3c0f51e1"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Collect File",
+              "description": null,
+              "arguments": {
+                "name": "Trend Micro Vision One",
+                "config": "41632b93-7160-40d9-9335-6de04607a89a",
+                "params": {
+                  "filePath": "/tmp",
+                  "collect_by": "Computer Names",
+                  "description": "",
+                  "endpointName": "sample-host"
+                },
+                "version": "1.0.0",
+                "connector": "trend-micro-vision-one",
+                "operation": "collect_file",
+                "operationTitle": "Collect File",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "154",
+              "left": "349",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "362cf58d-e3c1-4d12-88d4-66fbef99ac1e"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Collect File",
+              "targetStep": "/api/3/workflow_steps/362cf58d-e3c1-4d12-88d4-66fbef99ac1e",
+              "sourceStep": "/api/3/workflow_steps/44d6e63f-5cb4-4964-8c3e-a02d3c0f51e1",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "a361b976-4039-4340-9126-e75e8422815c"
+            }
+          ],
+          "groups": [],
+          "priority": null,
+          "uuid": "e9511a11-0b9d-4e29-87a1-9c714a3569d8",
+          "id": 572,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "Trendmicro",
+            "trendmicro-vision-one"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Remove from Block List",
+          "aliasName": null,
+          "tag": "#Trend Micro Vision One",
+          "description": "Removes an email address, file SHA-1, domain, IP address, or URL that was added to the Suspicious Object List using the \"Add to block list\" action. Note: Every object in the request body must refer to only one item.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1656412658,
+          "collection": "/api/3/workflow_collections/13a06ca7-b2f1-489d-80a6-b8b43c3212e3",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/5f23e3a5-31bd-4b00-87ca-3cc97cd8f579",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "2b79eb76-1890-4200-a94d-8eacd2ae6450",
+                "title": "Trend Micro Vision One: Remove from Block List",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "20",
+              "left": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "5f23e3a5-31bd-4b00-87ca-3cc97cd8f579"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Remove from Block List",
+              "description": null,
+              "arguments": {
+                "name": "Trend Micro Vision One",
+                "config": "41632b93-7160-40d9-9335-6de04607a89a",
+                "params": {
+                  "description": "Add to Block list",
+                  "indicator_type": "IP Address",
+                  "indicator_value": "1.1.1.1"
+                },
+                "version": "1.0.0",
+                "connector": "trend-micro-vision-one",
+                "operation": "remove_from_block_list",
+                "operationTitle": "Remove from Block List",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "142",
+              "left": "355",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "a371c559-7be4-4ca6-980e-32f33aac2e48"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Remove from Block List",
+              "targetStep": "/api/3/workflow_steps/a371c559-7be4-4ca6-980e-32f33aac2e48",
+              "sourceStep": "/api/3/workflow_steps/5f23e3a5-31bd-4b00-87ca-3cc97cd8f579",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "12ce1988-8b09-46f1-a611-718afb83a985"
+            }
+          ],
+          "groups": [],
+          "priority": null,
+          "uuid": "eb9d2a2b-1b58-4b51-a3b7-5a96cf94253c",
+          "id": 573,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "Trendmicro",
+            "trendmicro-vision-one"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get Task Details",
+          "aliasName": null,
+          "tag": null,
+          "description": "Retrieves an object containing the results of a response task.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1656412510,
+          "collection": "/api/3/workflow_collections/13a06ca7-b2f1-489d-80a6-b8b43c3212e3",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/abfb96fe-f1f6-46c1-968b-35d4e7b914e1",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "4ecd9b92-59ce-415f-a183-1c3d8f6d95a5",
+                "title": "Trend Micro Vision One: Get Task Details",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "40",
+              "left": "40",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "abfb96fe-f1f6-46c1-968b-35d4e7b914e1"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Task Details",
+              "description": null,
+              "arguments": {
+                "name": "Trend Micro Vision One",
+                "config": "41632b93-7160-40d9-9335-6de04607a89a",
+                "params": {
+                  "task_id": "00000005"
+                },
+                "version": "1.0.0",
+                "connector": "trend-micro-vision-one",
+                "operation": "get_task_details",
+                "operationTitle": "Get Task Details",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "163",
+              "left": "388",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "c53d0aea-ee28-4dee-9f9a-f10ba930c9b0"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Get Task Detals",
+              "targetStep": "/api/3/workflow_steps/c53d0aea-ee28-4dee-9f9a-f10ba930c9b0",
+              "sourceStep": "/api/3/workflow_steps/abfb96fe-f1f6-46c1-968b-35d4e7b914e1",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "40637339-33f3-4027-a733-60cad2592b04"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "fc44997d-697a-4d94-b294-5d1fa025492c",
+          "id": 574,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "Trendmicro",
+            "trendmicro-vision-one"
+          ]
+        }
+      ]
+    }
+  ],
+  "exported_tags": [
+    "Trendmicro",
+    "trendmicro-vision-one"
+  ]
+}

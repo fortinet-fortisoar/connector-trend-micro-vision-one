@@ -1,0 +1,1270 @@
+{
+  "name": "trend-micro-vision-one",
+  "label": "Trend Micro Vision One",
+  "description": "Trend Micro Vision One providing deep and broad extended detection and response (XDR) capabilities that collect and automatically correlate data across multiple security layers—email, endpoints, servers, cloud workloads, and networks—Trend Micro Vision One prevents the majority of attacks with automated protection. This connector facilitates automated operation such as retrieving information about workbench alerts in Trend Micro Vision One, adding indicators such as email addresses, domains, etc. to the 'Suspicious Object List' in Trend Micro Vision One, terminates a process that is running on one or more endpoints, etc.",
+  "publisher": "Community",
+  "cs_approved": false,
+  "cs_compatible": true,
+  "version": "1.0.0",
+  "category": "Threat Intelligence",
+  "help_online": "https://docs.fortinet.com/document/fortisoar/1.0.0/trend-micro-vision-one/310/trend-micro-vision-one-v1-0-0",
+  "icon_small_name": "small.png",
+  "icon_large_name": "large.png",
+  "configuration": {
+    "fields": [
+      {
+        "title": "Server URL",
+        "name": "server_url",
+        "type": "text",
+        "description": "Specify the server URL of the Trend Micro Vision One API server to which you will connect and perform the automated operations. For more information, see https://automation.trendmicro.com/xdr/Guides/Regional-Domains",
+        "required": true,
+        "editable": true,
+        "visible": true
+      },
+      {
+        "title": "API Key",
+        "name": "api_key",
+        "type": "password",
+        "description": "Specify the API Key used to access the Trend Micro Vision One endpoint to which you will connect and perform the automated operations.",
+        "required": true,
+        "editable": true,
+        "visible": true
+      },
+      {
+        "title": "Verify SSL",
+        "name": "verify_ssl",
+        "type": "checkbox",
+        "description": "Specifies whether the SSL certificate for the server is to be verified or not. By default, this option is set as True.",
+        "required": false,
+        "editable": true,
+        "visible": true,
+        "value": true
+      }
+    ]
+  },
+  "operations": [
+    {
+      "operation": "get_list_alerts",
+      "title": "Search Alerts",
+      "category": "investigation",
+      "annotation": "search_alerts",
+      "description": "Retrieves information about all workbench alerts or specific workbench alerts from Trend Micro Vision One that match the criteria you have specified, in a paginated list. Note: The response of this operation displays up to 10 entries per page. If the response body exceeds 50 MB in size, then only one entry per page is shown.",
+      "parameters": [
+        {
+          "title": "TMV1 Filter Query",
+          "name": "query",
+          "type": "text",
+          "description": "Query using which you want to filter workbench alerts retrieved from Trend Micro Vision One.",
+          "tooltip": "Statement that allows you to retrieve a subset of the collected detection data. Note: For more information about the query syntax and supported fields, see https://docs.trendmicro.com/en-us/enterprise/trend-micro-xdr-help/SearchApp.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "placeholder": "investigationStatus eq 'New'"
+        },
+        {
+          "title": "Start Date",
+          "name": "startDateTime",
+          "type": "datetime",
+          "description": "Specify the DateTime in the ISO 8601 format (yyyy-MM-ddThh:mm:ssZ in UTC) from when you want to retrieve workbench alerts from Trend Micro Vision One.",
+          "tooltip": "Datetime in ISO 8601 format (yyyy-MM-ddThh:mm:ssZ in UTC) that indicates the start of the data retrieval time range.",
+          "required": false,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "End Date",
+          "name": "endDateTime",
+          "type": "datetime",
+          "description": "Specify the DateTime in the ISO 8601 format (yyyy-MM-ddThh:mm:ssZ in UTC) till when you want to retrieve workbench alerts from Trend Micro Vision One. Note:Ensure that the \"End Date\" is not earlier than the \"Start Date\".",
+          "tooltip": "Datetime in ISO 8601 format (yyyy-MM-ddThh:mm:ssZ in UTC) that indicates the end of the data retrieval time range. Ensure that \"End Date\" is not earlier than \"Start Date\".",
+          "required": false,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "Date Time Target",
+          "name": "dateTimeTarget",
+          "type": "select",
+          "description": "Specify the DateTime between the \"Start Date\" and the \"End Date\" to be used for retrieving workbench alerts from Trend Micro Vision One.",
+          "tooltip": "Datetime between \"Start Date\" and \"End Date\" to be used for retrieving alert data.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "options": [
+            "createdDateTime",
+            "updatedDateTime"
+          ]
+        },
+        {
+          "title": "Order By",
+          "name": "orderBy",
+          "type": "text",
+          "description": "Specify the parameters (fields) based on which you want to sort the records retrieved from Trend Micro Vision One, in the ascending (default) or descending order. To return records in descending order, add the \"desc\" phrase after the parameter name. Sub-sorts can be specified by a comma-separated list of property names. Sortable fields include: id, name, investigationStatus, model, score, severity, createdDateTime, and updatedDateTime.",
+          "tooltip": "Parameter to be used for sorting records. Records are returned in ascending order by default. To return records in descending order, add a phrase \"desc\" after the parameter name. Sub-sorts can be specified by a comma-separated list of property names. Sortable fields are as follows:\n\nid\nname\ninvestigationStatus\nmodel\nscore\nseverity\ncreatedDateTime\nupdatedDateTime",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "placeholder": "score desc,severity desc"
+        },
+        {
+          "title": "Offset",
+          "name": "offset",
+          "type": "text",
+          "description": "The offset value retrieves a subset of records that starts from the offset value.By default, this is set to 0.",
+          "tooltip": "provide offset value of the page",
+          "required": false,
+          "editable": true,
+          "visible": true
+        }
+      ],
+      "enabled": true,
+      "output_schema": {
+        "items": [
+          {
+            "schemaVersion": "",
+            "id": "",
+            "investigationStatus": "",
+            "workbenchLink": "",
+            "alertProvider": "",
+            "model": "",
+            "score": "",
+            "severity": "",
+            "impactScope": {
+              "desktopCount": "",
+              "serverCount": "",
+              "accountCount": "",
+              "emailAddressCount": "",
+              "entities": [
+                {
+                  "entityType": "",
+                  "entityValue": "",
+                  "entityId": "",
+                  "relatedEntities": [],
+                  "relatedIndicatorIds": []
+                }
+              ]
+            },
+            "createdDateTime": "",
+            "updatedDateTime": "",
+            "description": "",
+            "indicators": [
+              {
+                "id": "",
+                "type": "",
+                "value": "",
+                "relatedEntities": [],
+                "filterIds": []
+              }
+            ],
+            "matchedRules": [
+              {
+                "id": "",
+                "name": "",
+                "matchedFilters": [
+                  {
+                    "id": "",
+                    "name": "",
+                    "matchedDateTime": "",
+                    "mitreTechniqueIds": [],
+                    "matchedEvents": [
+                      {
+                        "uuid": "",
+                        "matchedDateTime": ""
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "nextLink": ""
+      }
+    },
+    {
+      "operation": "get_alert_details",
+      "title": "Get Alert Details",
+      "category": "investigation",
+      "annotation": "get_alert_details",
+      "description": "Retrieves detailsabout the specified alert fromTrend Micro Vision One based on the alert ID you have specified.",
+      "parameters": [
+        {
+          "title": "Alert ID",
+          "name": "id",
+          "type": "text",
+          "description": "Specify the ID of the workbench alert whose details you want to retrieve from Trend Micro Vision One.",
+          "tooltip": "Workbench alert ID",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "placeholder": "WB-9002-20200427-0002"
+        }
+      ],
+      "enabled": true,
+      "output_schema": {
+        "schemaVersion": "",
+        "id": "",
+        "investigationStatus": "",
+        "workbenchLink": "",
+        "alertProvider": "",
+        "model": "",
+        "description": "",
+        "score": "",
+        "severity": "",
+        "createdDateTime": "",
+        "updatedDateTime": "",
+        "impactScope": {
+          "desktopCount": "",
+          "serverCount": "",
+          "accountCount": "",
+          "emailAddressCount": "",
+          "entities": [
+            {
+              "entityType": "",
+              "entityValue": "",
+              "entityId": "",
+              "relatedEntities": [],
+              "relatedIndicatorIds": []
+            }
+          ]
+        },
+        "indicators": [
+          {
+            "id": "",
+            "type": "",
+            "value": "",
+            "relatedEntities": [],
+            "filterIds": []
+          }
+        ],
+        "matchedRules": [
+          {
+            "id": "",
+            "name": "",
+            "matchedFilters": [
+              {
+                "id": "",
+                "name": "",
+                "matchedDateTime": "",
+                "mitreTechniqueIds": [],
+                "matchedEvents": [
+                  {
+                    "uuid": "",
+                    "matchedDateTime": ""
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "operation": "get_task_details",
+      "title": "Get Task Details",
+      "category": "investigation",
+      "annotation": "get_task_details",
+      "description": "Retrieves an object containing the results of a response task fromTrend Micro Vision One based on the task ID you have specified.",
+      "parameters": [
+        {
+          "title": "Task ID",
+          "name": "task_id",
+          "type": "text",
+          "description": "Specify the Unique numeric string that identifies the response task whose details you want to retrieve from Trend Micro Vision One.",
+          "tooltip": "Unique numeric string that identifies a response task.",
+          "required": true,
+          "editable": true,
+          "visible": true
+        }
+      ],
+      "enabled": true,
+      "output_schema": {
+        "id": "",
+        "status": "",
+        "createdDateTime": "",
+        "lastActionDateTime": "",
+        "description": "",
+        "action": "",
+        "account": "",
+        "agentGuid": "",
+        "endpointName": ""
+      }
+    },
+    {
+      "operation": "get_detection_data",
+      "title": "Get Detection Data",
+      "category": "investigation",
+      "annotation": "get_detection_data",
+      "description": "Displays search results from the Detection Data source inTrend Micro Vision One that match the criteria you have specified.",
+      "parameters": [
+        {
+          "title": "TMV1 Query",
+          "name": "query",
+          "type": "text",
+          "description": "Query using which you want to filter the collected detection data retrieved from Trend Micro Vision One. Supported fields are as follows: hostName' - Match type support: Partial match 'interestedHost' - Match type support: Partial match 'shost' - Match type support: Partial match 'dhost' - Match type support: Partial match 'endpointHostName' - Match type support: Partial match 'userDomain' - Match type support: Partial match 'endpointGUID' - Match type support: Partial match 'request' - Match type support: Partial match 'src' - Match type support: Partial match 'dst' - Match type support: Partial match interestedIp' - Match type support: Partial match 'endpointIp' - Match type support: Partial match 'peerIp' - Match type support: Partial match 'denyListIp' - Match type support: Partial match 'dpt' - Match type support: Full match 'spt' - Match type support: Full match 'fileName' - Match type support: Partial match 'objectFileName' - Match type support: Partial match 'compressedFileName' - Match type support: Partial match 'attachmentFileName' - Match type support: Partial match 'filePath' - Match type support: Partial match 'filePathName' - Match type support: Partial match 'objectFilePath' - Match type support: Partial match 'fileHash' - Match type support: Full match 'attachmentFileHash' - Match type support: Full match 'attachmentFileHashSha1' - Match type support: Full match 'compressedFileHash' - Match type support: Full match 'objectFileHashSha1' - Match type support: Full match 'fileHashSha256' - Match type support: Full match 'attachmentFileHashSha256' - Match type support: Full match 'compressedFileHashSha256' - Match type support: Full match 'objectFileHashSha256' - Match type support: Full match 'attachmentFileHashMd5' - Match type support: Full match 'objectFileHashMd5' - Match type support: Full match 'processCmd' - Match type support: Partial match 'objectCmd' - Match type support: Partial match 'objectRegistryData' - Match type support: Partial match 'objectRegistryKeyHandle' - Match type support: Partial match 'objectRegistryValue' - Match type support: Partial match 'suid' - Match type support: Partial match 'processFilePath' - Match type support: Partial match 'suser' - Match type support: Partial match 'duser' - Match type support: Partial match 'mailMsgSubject' - Match type support: Partial match 'msgId' - Match type support: Partial match 'techniqueId' - Match type support: Partial match 'tags' - Match type support: Partial match 'tacticId' - Match type support: Partial match 'malName' - Match type support: Partial match 'eventName' - Match type support: Partial match 'eventSubName' - Match type support: Partial match 'fullPath' - Match type support: Partial match 'parentCmd' - Match type support: Partial match 'parentFilePath' - Match type support: Partial match 'parentFileHashSha1' - Match type support: Full match 'parentFileHashSha256' - Match type support: Full match 'parentFileHashMd5' - Match type support: Full match 'processFileHashSha1' - Match type support: Full match 'processFileHashSha256' - Match type support: Full match 'processFileHashMd5' - Match type support: Full match 'srcFilePath' - Match type support: Partial match 'srcFileHashSha1' - Match type support: Full match 'srcFileHashSha256' - Match type support: Full match 'srcFileHashMd5' - Match type support: Full match 'pname' - Match type support: Partial match 'act' - Match type support: Partial match 'deviceGUID' - Match type support: Partial match 'objectIp' - Match type support: Partial match 'objectPort' - Match type support: Full match 'domainName' - Match type support: Partial match 'peerHost' - Match type support: Partial match 'httpReferer' - Match type support: Partial match 'objectHostName' - Match type support: Partial match 'msgUuid' - Match type support: Partial match 'uuid' - Match type support: Partial match Supported operators: ':' - Abbreviation of the operator \"equal to\" 'and' - Operator \"and\" 'or' - Operator \"or\" 'not' - Operator \"not\" '( )' - Symbols for grouping operands with their correct operator. Note: For more information about the query syntax and supported fields, seehttps://docs.trendmicro.com/en-us/enterprise/trend-micro-xdr-help/SearchApp.",
+          "tooltip": "Statement that allows you to retrieve a subset of the collected detection data. Note: For more information about the query syntax and supported fields, see https://docs.trendmicro.com/en-us/enterprise/trend-micro-xdr-help/SearchApp.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "placeholder": "spt:443 or attachmentFileName:test.txt"
+        },
+        {
+          "title": "Start Date",
+          "name": "startDateTime",
+          "type": "datetime",
+          "description": "Specify the Timestamp in ISO 8601 format from when you want to retrieve data from Trend Micro Vision One.If no value is specified, the 'startDateTime' defaults to 24 hours before the request is made.",
+          "tooltip": "Timestamp in ISO 8601 format that indicates the start of the data retrieval range. If no value is specified, 'startDateTime' defaults to 24 hours before the request is made.",
+          "required": false,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "End Date",
+          "name": "endDateTime",
+          "type": "datetime",
+          "description": "Specify the Timestamp in ISO 8601 format till when you want to retrieve data from Trend Micro Vision One. If no value is specified, the 'endDateTime' defaults to the time the request is made.",
+          "tooltip": "Timestamp in ISO 8601 format that indicates the end of the data retrieval time range. If no value is specified, 'endDateTime' defaults to the time the request is made.",
+          "required": false,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "Limit",
+          "name": "top",
+          "type": "integer",
+          "description": "Specify the maximum number of records that this operation should return, per page.",
+          "tooltip": "Number of records return in action response.",
+          "required": false,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "Field in Result",
+          "name": "select",
+          "type": "text",
+          "description": "Specify the list of fields that you want to include in the search results. If no fields are specified, the query returns all supported fields.",
+          "tooltip": "List of fields to include in the search results. If no fields are specified, the query returns all supported fields.",
+          "required": false,
+          "editable": true,
+          "visible": true
+        }
+      ],
+      "enabled": true,
+      "output_schema": [
+        {
+          "status": "",
+          "headers": [
+            {
+              "name": "",
+              "value": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "operation": "get_endpoint_details",
+      "title": "Get Endpoint Details",
+      "category": "investigation",
+      "annotation": "get_endpoint_details",
+      "description": "Displays search results from the endpoint info source inTrend Micro Vision One that match the criteria you have specified.",
+      "parameters": [
+        {
+          "title": "TMV1 Query",
+          "name": "query",
+          "type": "text",
+          "description": "Query using which you want to filter the collected endpoint info data retrieved from Trend Micro Vision One. Supported fields and operators are as follows:'agentGuid' 'loginAccount' 'endpointName' 'macAddress' 'ip' 'osName' - supported values: Linux, Windows, macOS, macOSX 'osVersion' 'productCode'- Supported values: sao, sds, xes 'installedProductCodes' - Supported values: sao, sds, xes 'eq' - Abbreviation of the operator 'equal to' 'and' - Operator 'and' 'or' - Operator 'or' 'not' - Operator 'not' '( )' - Symbols for grouping operands with their correct operator. Note: When generating paginated output, the TMV1-Query has to be included with every request.",
+          "tooltip": "Statement that allows you to retrieve a subset of the collected Endpoint Info data. Supported fields and operators:\n\n'agentGuid'\n'loginAccount'\n'endpointName'\n'macAddress'\n'ip'\n'osName' - Supported values: Linux, Windows, macOS, macOSX\n'osVersion'\n'productCode' - Supported values: sao, sds, xes\n'installedProductCodes' - Supported values: sao, sds, xes\n'eq' - Abbreviation of the operator 'equal to'\n'and' - Operator 'and'\n'or' - Operator 'or'\n'not' - Operator 'not'\n'( )' - Symbols for grouping operands with their correct operator.\nNote: When generating paginated output, TMV1-Query has to be included with every request.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "placeholder": "(endpointName eq 'sample-host') or (macAddress eq '00:11:22:33:44:55')"
+        },
+        {
+          "title": "Limit",
+          "name": "top",
+          "type": "integer",
+          "description": "Specify the maximum number of records that this operation should return, per page.",
+          "tooltip": "Number of records displayed on a page.",
+          "required": false,
+          "editable": true,
+          "visible": true
+        }
+      ],
+      "enabled": true,
+      "output_schema": {
+        "items": [
+          {
+            "agentGuid": "",
+            "loginAccount": {
+              "value": [],
+              "updatedDateTime": ""
+            },
+            "endpointName": {
+              "value": "",
+              "updatedDateTime": ""
+            },
+            "macAddress": {
+              "value": [],
+              "updatedDateTime": ""
+            },
+            "ip": {
+              "value": [],
+              "updatedDateTime": ""
+            },
+            "osName": "",
+            "osVersion": "",
+            "osDescription": "",
+            "productCode": "",
+            "installedProductCodes": []
+          }
+        ],
+        "nextLink": ""
+      }
+    },
+    {
+      "operation": "add_to_block_list",
+      "title": "Add to Block List",
+      "category": "containment",
+      "annotation": "add_to_block_list",
+      "description": "Adds an email address, file hash (SHA-1), domain, IP address, or URL to the 'Suspicious Object List' inTrend Micro Vision One based on the indicator type and value you have specified. The 'Suspicious Object List' blocks the objects on subsequent detections. Note: Every object in the request body must refer to only one item.",
+      "parameters": [
+        {
+          "title": "Indicator Type",
+          "name": "indicator_type",
+          "type": "select",
+          "description": "Select the type of indicator that you want to add to the 'Suspicious Object List' in Trend Micro Vision One. You can choose between the following types: IP Address, URL, Domain, File SHA1, or Email Address.",
+          "tooltip": "Select type of the indicator which you want to add into suspicious object list.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "options": [
+            "IP Address",
+            "URL",
+            "Domain",
+            "File SHA1",
+            "Email Address"
+          ],
+          "value": "IP Address"
+        },
+        {
+          "title": "Indicator Value",
+          "name": "indicator_value",
+          "type": "text",
+          "description": "Specify the value of the selected indicator type that you want to add to the 'Suspicious Object List' in Trend Micro Vision One.",
+          "tooltip": "Provide value of selected indicator types which you want to add into suspicious object list.",
+          "required": true,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "Description",
+          "name": "description",
+          "type": "text",
+          "description": "(Optional) Specify the description that you want to add while adding the indicator to the 'Suspicious Object List' in Trend Micro Vision One.",
+          "tooltip": "Provide description of a response task.",
+          "required": false,
+          "editable": true,
+          "visible": true
+        }
+      ],
+      "enabled": true,
+      "output_schema": [
+        {
+          "status": "",
+          "headers": [
+            {
+              "name": "",
+              "value": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "operation": "add_to_suspicious_object_list",
+      "title": "Add to Suspicious Object List",
+      "category": "containment",
+      "annotation": "add_to_suspicious_object_list",
+      "description": "Adds the information about domains, file hashes (SHA-1 or SHA-256), IP addresses, email addresses, or URLs to the Suspicious Object ListinTrend Micro Vision One based on the indicator type and value you have specified.",
+      "parameters": [
+        {
+          "title": "Indicator Type",
+          "name": "indicator_type",
+          "type": "select",
+          "description": "Select the type of indicator that you want to add to the 'Suspicious Object List' in Trend Micro Vision One. You can choose between the following types: IP Address, URL, Domain, File SHA1, File SHA256, or Email Address.",
+          "tooltip": "Select type of the indicator which you want to add into suspicious object list.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "options": [
+            "IP Address",
+            "URL",
+            "Domain",
+            "Email Address",
+            "File SHA1",
+            "File SHA256"
+          ],
+          "value": "IP Address"
+        },
+        {
+          "title": "Indicator Value",
+          "name": "indicator_value",
+          "type": "text",
+          "description": "Specify a CSV list of values of the selected indicator type that you want to add to the 'Suspicious Object List' in Trend Micro Vision One.",
+          "tooltip": "Provide CSV list of values of selected indicator types which you want to add into suspicious object list.",
+          "required": true,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "Scan Action",
+          "name": "scanAction",
+          "type": "select",
+          "description": "(Optional) Select the action that connected products perform after detecting a suspicious object. You can choose between Block or Log.",
+          "tooltip": "Action that connected products apply after detecting a suspicious object.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "options": [
+            "Block",
+            "Log"
+          ]
+        },
+        {
+          "title": "Risk Level",
+          "name": "riskLevel",
+          "type": "select",
+          "description": "(Optional) Select the risk level that you want to assign to the suspicious object.You can choose between High, Medium, or Low.",
+          "tooltip": "Risk level of a suspicious object.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "options": [
+            "High",
+            "Medium",
+            "Low"
+          ]
+        },
+        {
+          "title": "Days to Expiration",
+          "name": "daysToExpiration",
+          "type": "integer",
+          "description": "(Optional) Specify an integer that indicates the number of days before the object expires. If this value is set to -1, the object does not have an expiration date.",
+          "tooltip": "Integer that indicates the number of days before the object expires. If this value is set to -1, the object doesn't have expiration date.",
+          "required": false,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "Description",
+          "name": "description",
+          "type": "text",
+          "description": "(Optional) Specify the description of the object that you want to add to the 'Suspicious Object List' in Trend Micro Vision One.",
+          "tooltip": "Description of an object.",
+          "required": false,
+          "editable": true,
+          "visible": true
+        }
+      ],
+      "enabled": true,
+      "output_schema": [
+        {
+          "status": "",
+          "headers": [
+            {
+              "name": "",
+              "value": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "operation": "add_to_exception_list",
+      "title": "Add to Exception List",
+      "category": "remediation",
+      "annotation": "add_to_exception_list",
+      "description": "Adds domains, file hashes (SHA-1 or SHA-256), IP addresses, email addresses, or URLs to the Exception List inTrend Micro Vision One based on the indicator type and value you have specified.",
+      "parameters": [
+        {
+          "title": "Indicator Type",
+          "name": "indicator_type",
+          "type": "select",
+          "description": "Select the type of indicator that you want to add to the 'Exception List' in Trend Micro Vision One. You can choose between the following types: IP Address, URL, Domain, File SHA1, File SHA256, or Email Address.",
+          "tooltip": "Select type of the indicator which you want to add into exception list.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "options": [
+            "IP Address",
+            "URL",
+            "Domain",
+            "Email Address",
+            "File SHA1",
+            "File SHA256"
+          ],
+          "value": "IP Address"
+        },
+        {
+          "title": "Indicator Value",
+          "name": "indicator_value",
+          "type": "text",
+          "description": "Specify a CSV list of values of the selected indicator type that you want to add to the 'Exception List' in Trend Micro Vision One.",
+          "tooltip": "Provide CSV list of values of selected indicator types which you want to add into exception list.",
+          "required": true,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "Description",
+          "name": "description",
+          "type": "text",
+          "description": "(Optional) Specify the description of the object that you want to add to the 'Exception List' in Trend Micro Vision One.",
+          "tooltip": "Description of the object to be added to the Exception List.",
+          "required": false,
+          "editable": true,
+          "visible": true
+        }
+      ],
+      "enabled": true,
+      "output_schema": [
+        {
+          "status": ""
+        }
+      ]
+    },
+    {
+      "operation": "isolate_endpoint",
+      "title": "Isolate Endpoints",
+      "category": "containment",
+      "annotation": "isolate_endpoint",
+      "description": "Disconnects one or more endpoints from the network (but allows communication with the managing Trend Micro server product) based on either the computer name (\"endpointName\") or the GUID of the installed agent program (\"agentGuid\") you have specified.",
+      "parameters": [
+        {
+          "title": "Isolate By",
+          "name": "isolate_by",
+          "type": "select",
+          "description": "You can choose either the computer name (\"endpointName\") or the GUID of the installed agent program (\"agentGuid\") to disconnect one or more endpoints from the network. If you choose 'Computer Names', then in theComputer Namesfield specify the CSV list of computer names (\"endpointName\") you want to isolate from the network. If you choose 'Agent GUIDs', then in theAgent GUIDsfield specify the CSV list of unique agent IDs, which is an alphanumeric string that identifies an installed agent that you want to isolate from the network.",
+          "tooltip": "User can isolate endpoints based on computer names or the Agent GUIDs of the installed agent.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "options": [
+            "Computer Names",
+            "Agent GUIDs"
+          ],
+          "value": "Computer Names",
+          "onchange": {
+            "Computer Names": [
+              {
+                "title": "Computer Names",
+                "name": "endpointName",
+                "type": "text",
+                "description": "specify CSV list of computer names (\"endpointName\") user wants isolate.",
+                "tooltip": "specify CSV list of computer names (\"endpointName\") user wants isolate.",
+                "required": true,
+                "editable": true,
+                "visible": true
+              }
+            ],
+            "Agent GUIDs": [
+              {
+                "title": "Agent GUIDs",
+                "name": "agentGuid",
+                "type": "text",
+                "description": "Specify CSV list of unique IDs alphanumeric string that identifies an installed agent you can isolate.",
+                "tooltip": "Specify CSV list of unique IDs unique alphanumeric string that identifies an installed agent you can isolate.",
+                "required": true,
+                "editable": true,
+                "visible": true
+              }
+            ]
+          }
+        },
+        {
+          "title": "Description",
+          "name": "description",
+          "type": "text",
+          "description": "(Optional) Specify the description that you want to add while isolating the specified endpoints from the network.",
+          "tooltip": "Provide description of a response task.",
+          "required": false,
+          "editable": true,
+          "visible": true
+        }
+      ],
+      "enabled": true,
+      "output_schema": [
+        {
+          "status": "",
+          "headers": [
+            {
+              "name": "",
+              "value": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "operation": "restore_endpoint",
+      "title": "Restore Endpoints",
+      "category": "remediation",
+      "annotation": "restore_endpoint",
+      "description": "Restores network connectivity to one or more endpoints on which the \"Isolate endpoint\" action was applied based on either the computer name (\"endpointName\") or the GUID of the installed agent program (\"agentGuid\") you have specified.",
+      "parameters": [
+        {
+          "title": "Restore By",
+          "name": "restore_by",
+          "type": "select",
+          "description": "You can choose either the computer name (\"endpointName\") or the GUID of the installed agent program (\"agentGuid\") to restore network connectivity of the specified endpoints. If you choose 'Computer Names', then in theComputer Namesfield specify the CSV list of computer names (\"endpointName\") whose network connectivity you want to restore. If you choose 'Agent GUIDs', then in theAgent GUIDsfield specify the CSV list of unique agent IDs, which is an alphanumeric string that identifies an installed agentwhose network connectivity you want to restore.",
+          "tooltip": "You can restores network connectivity based on computer names or the Agent GUIDs of the installed agent.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "options": [
+            "Computer Names",
+            "Agent GUIDs"
+          ],
+          "value": "Computer Names",
+          "onchange": {
+            "Computer Names": [
+              {
+                "title": "Computer Names",
+                "name": "endpointName",
+                "type": "text",
+                "description": "Specify the computer name (\"endpointName\") user wants restore.",
+                "tooltip": "Specify the computer name (\"endpointName\") user wants restore.",
+                "required": true,
+                "editable": true,
+                "visible": true
+              }
+            ],
+            "Agent GUIDs": [
+              {
+                "title": "Agent GUIDs",
+                "name": "agentGuid",
+                "type": "text",
+                "description": "Specify unique alphanumeric string that identifies an installed agent user wants restore.",
+                "tooltip": "Specify unique alphanumeric string that identifies an installed agent user wants restore.",
+                "required": true,
+                "editable": true,
+                "visible": true
+              }
+            ]
+          }
+        },
+        {
+          "title": "Description",
+          "name": "description",
+          "type": "text",
+          "description": "(Optional) Specify the description that you want to add while restoring the network connectivity of the specified endpoints.",
+          "tooltip": "Provide description of a response task.",
+          "required": false,
+          "editable": true,
+          "visible": true
+        }
+      ],
+      "enabled": true,
+      "output_schema": [
+        {
+          "status": "",
+          "headers": [
+            {
+              "name": "",
+              "value": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "operation": "terminates_process",
+      "title": "Terminates Process",
+      "category": "containment",
+      "annotation": "terminates_process",
+      "description": "Terminates a process that is running on one or more endpoints based on the file SHA1 hash of the process you want to terminate and either the computer name (\"endpointName\") or the GUID of the installed agent program (\"agentGuid\") you have specified.",
+      "parameters": [
+        {
+          "title": "Terminate Process By",
+          "name": "terminates_by",
+          "type": "select",
+          "description": "You can choose either the computer name (\"endpointName\") or the GUID of the installed agent program (\"agentGuid\") on which you want to terminate the specific process. If you choose 'Computer Names', then in theComputer Namesfield specify the CSV list of computer names (\"endpointName\") on which you want to terminate the specific process. If you choose 'Agent GUIDs', then in theAgent GUIDsfield specify the CSV list of unique agent IDs, which is an alphanumeric string that identifies an installed agent on which you want to terminate the specific process.",
+          "tooltip": "User can terminates process based on computer names or the Agent GUIDs of the installed agent.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "options": [
+            "Computer Names",
+            "Agent GUIDs"
+          ],
+          "value": "Computer Names",
+          "onchange": {
+            "Computer Names": [
+              {
+                "title": "Computer Names",
+                "name": "endpointName",
+                "type": "text",
+                "description": "Specify the computer name (\"endpointName\") user wants terminates.",
+                "tooltip": "Specify the computer name (\"endpointName\") user wants terminates.",
+                "required": true,
+                "editable": true,
+                "visible": true
+              }
+            ],
+            "Agent GUIDs": [
+              {
+                "title": "Agent GUIDs",
+                "name": "agentGuid",
+                "type": "text",
+                "description": "Specify unique alphanumeric string that identifies an installed agent.",
+                "tooltip": "Specify unique alphanumeric string that identifies an installed agent.",
+                "required": true,
+                "editable": true,
+                "visible": true
+              }
+            ]
+          }
+        },
+        {
+          "title": "File SHA1",
+          "name": "fileSha1",
+          "type": "text",
+          "description": "Specify the SHA1 hash of the terminated process's executable file that you want to terminate on the specified endpoint.",
+          "tooltip": "SHA1 hash of the terminated process's executable file.",
+          "required": true,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "File Name",
+          "name": "fileName",
+          "type": "text",
+          "description": "(Optional) Specify the file name of the response task target.",
+          "tooltip": "File name of a response task target.",
+          "required": false,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "Description",
+          "name": "description",
+          "type": "text",
+          "description": "(Optional) Specify the description that you want to add while terminating the specified process on the specified endpoints.",
+          "tooltip": "Provide description of a response task.",
+          "required": false,
+          "editable": true,
+          "visible": true
+        }
+      ],
+      "enabled": true,
+      "output_schema": [
+        {
+          "status": "",
+          "headers": [
+            {
+              "name": "",
+              "value": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "operation": "collect_file",
+      "title": "Collect File",
+      "category": "investigation",
+      "annotation": "collect_file",
+      "description": "Collects a file from one or more endpoints and then sends the files to Trend Micro Vision One in a password-protected archive based on the file path and either the computer name (\"endpointName\") or the GUID of the installed agent program (\"agentGuid\") you have specified.",
+      "parameters": [
+        {
+          "title": "Collect File By",
+          "name": "collect_by",
+          "type": "select",
+          "description": "You can choose either the computer name (\"endpointName\") or the GUID of the installed agent program (\"agentGuid\") from which you want to collect the specified files. If you choose 'Computer Names', then in theComputer Namesfield specify the CSV list of computer names (\"endpointName\") from which you want to collect the specified files. If you choose 'Agent GUIDs', then in theAgent GUIDsfield specify the CSV list of unique agent IDs, which is an alphanumeric string that identifies an installed agent from which you want to collect the specified files.",
+          "tooltip": "User can collect file based on computer names or the Agent GUIDs of the installed agent.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "options": [
+            "Computer Names",
+            "Agent GUIDs"
+          ],
+          "value": "Computer Names",
+          "onchange": {
+            "Computer Names": [
+              {
+                "title": "Computer Names",
+                "name": "endpointName",
+                "type": "text",
+                "description": "Specify the endpoint name of the target endpoint.",
+                "tooltip": "Specify the endpoint name of the target endpoint.",
+                "required": true,
+                "editable": true,
+                "visible": true
+              }
+            ],
+            "Agent GUIDs": [
+              {
+                "title": "Agent GUIDs",
+                "name": "agentGuid",
+                "type": "text",
+                "description": "Specify unique alphanumeric string that identifies an installed agent.",
+                "tooltip": "Specify unique alphanumeric string that identifies an installed agent.",
+                "required": true,
+                "editable": true,
+                "visible": true
+              }
+            ]
+          }
+        },
+        {
+          "title": "File Path",
+          "name": "filePath",
+          "type": "text",
+          "description": "Specify the path of the file that you want to collect from the specified endpoint.",
+          "tooltip": "File path of the file to be collected from the target.",
+          "required": true,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "Description",
+          "name": "description",
+          "type": "text",
+          "description": "(Optional) Specify the description that you want to add while collecting files from the specified endpoints.",
+          "tooltip": "Provide description of a response task.",
+          "required": false,
+          "editable": true,
+          "visible": true
+        }
+      ],
+      "enabled": true,
+      "output_schema": [
+        {
+          "status": "",
+          "headers": [
+            {
+              "name": "",
+              "value": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "operation": "remove_from_block_list",
+      "title": "Remove from Block List",
+      "category": "remediation",
+      "annotation": "remove_from_block_list",
+      "description": "Removes an email address, file hash (SHA-1), domain, IP address, or URL from the 'Suspicious Object List' inTrend Micro Vision One, using the \"Add to block list\" action, based on the indicator type and value you have specified. Note: Every object in the request body must refer to only one item.",
+      "parameters": [
+        {
+          "title": "Indicator Type",
+          "name": "indicator_type",
+          "type": "select",
+          "description": "Select the type of indicator that you want to remove from the 'Suspicious Object List' in Trend Micro Vision One. You can choose between the following types: IP Address, URL, Domain, File SHA1, or Email Address.",
+          "tooltip": "Select type of the indicator which you want to remove from suspicious object list.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "options": [
+            "IP Address",
+            "URL",
+            "Domain",
+            "File SHA1",
+            "Email Address"
+          ],
+          "value": "IP Address"
+        },
+        {
+          "title": "Indicator Value",
+          "name": "indicator_value",
+          "type": "text",
+          "description": "Specify the value of the selected indicator type that you want to remove from the 'Suspicious Object List' in Trend Micro Vision One.",
+          "tooltip": "Provide value of selected indicator types which you want to removes from suspicious object list.",
+          "required": true,
+          "editable": true,
+          "visible": true
+        },
+        {
+          "title": "Description",
+          "name": "description",
+          "type": "text",
+          "description": "(Optional) Specify the description that you want to add while removing the indicator to the 'Suspicious Object List' in Trend Micro Vision One.",
+          "tooltip": "Provide description of a response task.",
+          "required": false,
+          "editable": true,
+          "visible": true
+        }
+      ],
+      "enabled": true,
+      "output_schema": [
+        {
+          "status": "",
+          "headers": [
+            {
+              "name": "",
+              "value": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "operation": "remove_from_suspicious_object_list",
+      "title": "Remove from Suspicious Object List",
+      "category": "remediation",
+      "annotation": "remove_from_suspicious_object_list",
+      "description": "Removes the information about domains, file hashes (SHA-1 or SHA-256), IP addresses, email addresses, or URLs from the Suspicious Object ListinTrend Micro Vision One based on the indicator type and value you have specified.",
+      "parameters": [
+        {
+          "title": "Indicator Type",
+          "name": "indicator_type",
+          "type": "select",
+          "description": "Select the type of indicator that you want to remove from the 'Suspicious Object List' in Trend Micro Vision One. You can choose between the following types: IP Address, URL, Domain, File SHA1, File SHA256, or Email Address.",
+          "tooltip": "Select type of the indicator which you want to remove from suspicious object list.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "options": [
+            "IP Address",
+            "URL",
+            "Domain",
+            "Email Address",
+            "File SHA1",
+            "File SHA256"
+          ],
+          "value": "IP Address"
+        },
+        {
+          "title": "Indicator Value",
+          "name": "indicator_value",
+          "type": "text",
+          "description": "Specify a CSV list of values of the selected indicator type that you want to remove from the 'Suspicious Object List' in Trend Micro Vision One.",
+          "tooltip": "Provide CSV list of values selected indicator types which you want to removes from suspicious object list.",
+          "required": true,
+          "editable": true,
+          "visible": true
+        }
+      ],
+      "enabled": true,
+      "output_schema": [
+        {
+          "status": "",
+          "headers": [
+            {
+              "name": "",
+              "value": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "operation": "remove_from_exception_list",
+      "title": "Remove from Exception List",
+      "category": "remediation",
+      "annotation": "remove_from_exception_list",
+      "description": "Removes domains, file hashes (SHA-1 or SHA-256), IP addresses, email addresses, or URLs from the Exception List inTrend Micro Vision One based on the indicator type and value you have specified.",
+      "parameters": [
+        {
+          "title": "Indicator Type",
+          "name": "indicator_type",
+          "type": "select",
+          "description": "Select the type of indicator that you want to remove from the 'Exception List' in Trend Micro Vision One. You can choose between the following types: IP Address, URL, Domain, File SHA1, File SHA256, or Email Address.",
+          "tooltip": "Select type of the indicator which you want to deletes from the exception list.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "value": [
+            "IP Address",
+            "URL",
+            "Domain",
+            "Email Address",
+            "File SHA1",
+            "File SHA256"
+          ]
+        },
+        {
+          "title": "Indicator Value",
+          "name": "indicator_value",
+          "type": "text",
+          "description": "Specify a CSV list of values of the selected indicator type that you want to remove from the 'Exception List' in Trend Micro Vision One.",
+          "tooltip": "Provide CSV list of values selected indicator types which you want to removes from the exception list.",
+          "required": true,
+          "editable": true,
+          "visible": true
+        }
+      ],
+      "enabled": true,
+      "output_schema": [
+        {
+          "status": ""
+        }
+      ]
+    },
+    {
+      "operation": "delete_email_message",
+      "title": "Delete Email Message",
+      "category": "remediation",
+      "annotation": "delete_email_message",
+      "description": "Deletes a message from one or more mailboxes based on the message IDs or message UniqueIds you have specified.",
+      "parameters": [
+        {
+          "title": "Delete Message By",
+          "name": "delete_by",
+          "type": "select",
+          "description": "You can choose either the Message ID or the Message UniqueId to specify the messages that you want to deletefrom one or more mailboxes. If you choose 'Message ID', then you must specify the following parameters: Message ID: Specify the CSV list of unique alphanumeric strings that identifies an email message. MailBox: Specify the email address in which you want to search for the specified message. Note:If no mailbox is specified, then all messages matching the specified \"messageId\" are affected. If you choose 'Message UniqueId', then in the Message Unique IDfield, specify the CSV list of unique alphanumeric string that identifies an email message within onemailbox.",
+          "tooltip": "User can delete message from mailbox using CSV list of Message IDs or Message UniqueIds.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "options": [
+            "Message ID",
+            "Message UniqueId"
+          ],
+          "onchange": {
+            "Message ID": [
+              {
+                "title": "Message ID",
+                "name": "messageId",
+                "type": "text",
+                "description": "Provide CSV list of unique alphanumeric strings that identifies an email message. If no mailbox is specified, all messages matching the specified \"messageId\" will be affected.",
+                "tooltip": "Provide CSV list unique of alphanumeric strings that identifies an email message. If no mailbox is specified, all messages matching the specified \"messageId\" will be affected.",
+                "required": true,
+                "editable": true,
+                "visible": true
+              },
+              {
+                "title": "MailBox",
+                "name": "mailBox",
+                "type": "text",
+                "description": "Email address where the specified message is searched. If no mailbox is specified, all messages matching the specified \"messageId\" will be affected.\"",
+                "tooltip": "Email address where the specified message is searched. If no mailbox is specified, all messages matching the specified \"messageId\" will be affected.\"",
+                "required": true,
+                "editable": true,
+                "visible": true
+              }
+            ],
+            "Message UniqueId": [
+              {
+                "title": "Message Unique ID",
+                "name": "uniqueId",
+                "type": "text",
+                "description": "Provide CSV list of unique alphanumeric string that identifies an email message within one mailbox.",
+                "tooltip": "Provide CSV list of unique alphanumeric string that identifies an email message within one mailbox.",
+                "required": true,
+                "editable": true,
+                "visible": true
+              }
+            ]
+          }
+        },
+        {
+          "title": "Description",
+          "name": "description",
+          "type": "text",
+          "description": "(Optional) Specify the description that you want to add while deleting the specified email messages.",
+          "tooltip": "Description of a response task.",
+          "required": false,
+          "editable": true,
+          "visible": true
+        }
+      ],
+      "enabled": true,
+      "output_schema": [
+        {
+          "status": "",
+          "headers": [
+            {
+              "name": "",
+              "value": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "operation": "quarantine_email_message",
+      "title": "Quarantine Email Message",
+      "category": "remediation",
+      "annotation": "quarantine_email_message",
+      "description": "Moves a message from one or more mailboxes to their corresponding quarantine foldersbased on the message ID or message UniqueID you have specified.",
+      "parameters": [
+        {
+          "title": "Quarantine Message By",
+          "name": "quarantine_by",
+          "type": "select",
+          "description": "You can choose either the Message ID or the Message UniqueId to move specified messages to their corresponding quarantine folders. If you choose 'Message ID', then you must specify the following parameters: Message ID: Specify the CSV list of unique alphanumeric strings that identifies an email message. MailBox: Specify the email address in which you want to search for the specified message. Note:If no mailbox is specified, then all messages matching the specified \"messageId\" are affected. If you choose 'Message UniqueId', then in the Message Unique IDfield, specify the CSV list of unique alphanumeric string that identifies an email message within onemailbox.",
+          "tooltip": "User can moves a message quarantine to their corresponding quarantine folders.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "options": [
+            "Message ID",
+            "Message UniqueId"
+          ],
+          "onchange": {
+            "Message ID": [
+              {
+                "title": "Message ID",
+                "name": "messageId",
+                "type": "text",
+                "description": "Unique alphanumeric string that identifies an email message. If no mailbox is specified, all messages matching the specified \"messageId\" will be affected.",
+                "tooltip": "Unique alphanumeric string that identifies an email message. If no mailbox is specified, all messages matching the specified \"messageId\" will be affected.",
+                "required": true,
+                "editable": true,
+                "visible": true
+              },
+              {
+                "title": "MailBox",
+                "name": "mailBox",
+                "type": "text",
+                "description": "Email address where the specified message is searched.",
+                "tooltip": "Email address where the specified message is searched.",
+                "required": true,
+                "editable": true,
+                "visible": true
+              }
+            ],
+            "Message UniqueId": [
+              {
+                "title": "Message Unique ID",
+                "name": "uniqueId",
+                "type": "text",
+                "description": "Unique alphanumeric string that identifies an email message within one mailbox.",
+                "tooltip": "Unique alphanumeric string that identifies an email message within one mailbox.",
+                "required": true,
+                "editable": true,
+                "visible": true
+              }
+            ]
+          }
+        },
+        {
+          "title": "Description",
+          "name": "description",
+          "type": "text",
+          "description": "(Optional) Specify the description that you want to add while movingthe specified messages to their corresponding quarantine folders.",
+          "tooltip": "Description of a response task.",
+          "required": false,
+          "editable": true,
+          "visible": true
+        }
+      ],
+      "enabled": true,
+      "output_schema": [
+        {
+          "status": "",
+          "headers": [
+            {
+              "name": "",
+              "value": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
